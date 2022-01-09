@@ -13,4 +13,17 @@ const decrement = () => {
   }
 }
 
-export { increment, decrement }
+const login = () => {
+  return {
+    type: 'LOGIN',
+  }
+}
+
+
+const logout = () => {
+  return {
+    type: 'LOGOUT',
+  }
+}
+
+export { increment, decrement, login, logout }
