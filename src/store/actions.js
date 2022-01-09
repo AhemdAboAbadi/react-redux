@@ -1,8 +1,8 @@
 // Action 
-const increment = () => {
+const increment = (num) => {
   return {
     type: 'INC',
-    payload: 2
+    payload: num ? num : 1
   }
 }
 
@@ -13,4 +13,4 @@ const decrement = () => {
   }
 }
 
-export default { increment, decrement }
+export { increment, decrement }

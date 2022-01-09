@@ -1,8 +1,10 @@
 import './App.css';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from './store/actions'
 
 function App() {
-  const count = useSelector(state => state.count)
+  const count = useSelector(state => state.counter.count)
+  const dispatch = useDispatch()
   return (
     <div className="App">
       <header>
@@ -10,8 +12,9 @@ function App() {
         <button> Login </button>
       </header>
       <div className="counter">
-        <button>+</button>
-        <button>-</button>
+        <button onClick={() => dispatch(increment(3))}>+ 3</button>
+        <button onClick={() => dispatch(increment())}>+ 1</button>
+        <button onClick={() => dispatch(decrement())}>- 1</button>
       </div>
     </div>
   );

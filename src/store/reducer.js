@@ -1,22 +1,10 @@
-//Reducer
+import counterReducer from "./counterReducer";
+import loggedRecords from "./loggedReducer";
+import { combineReducers } from "redux"
 
-const initialState = {
-  count: 5
-}
-const counter = (state = initialState, action) => {
-  switch (action.type) {
-    case "INC":
-      return {
-        ...state,
-        count: state.count + action.payload
-      }
-    case "DEC":
-      return {
-        ...state,
-        count: state.count - action.payload
-      }
-    default: return state
-  }
-}
+const reducer = combineReducers({
+  counter: counterReducer,
+  logged: loggedRecords
+})
 
-export default counter
+export default reducer
